@@ -11,3 +11,7 @@ I had a couple pillars in mind for how to make this:
  - Render using the GPU (best performance and visual quality)
 
 It is written in some very old (by today's standards) OpenGL. Someday, Apple will end support for OpenGL and force everything to run in Metal and I will have to rewite this in Metal (and maybe Swift too).
+
+## Why The Name
+
+The episodes of *Tenchi Universe* are all titled "No Need for ..." Since this screen saver is nothing but a couple crabs **No Need For Crabs** seemed like a good name.
