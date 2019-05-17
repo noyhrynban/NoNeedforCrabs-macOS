@@ -1,7 +1,7 @@
 # No Need For Crabs - macOS
 A simple crab screen saver for macOS.
 
-[Download Latest](/noyhrynban/no-need-for-crabs-macos/releases/latest/download/No.Need.For.Crabs.zip)
+[Download Latest](https://github.com/noyhrynban/no-need-for-crabs-macos/releases/latest/download/No.Need.For.Crabs.zip)
 
 The idea came from an episode of *Tenchi Muyo!*, *Hello Baby!*, where Washu starts working on her computer but gets lost in thought and her screen saver starts. Her screen saver is just these two simple little crabs walking across her screen.
 
