@@ -36,10 +36,10 @@
 		[self addSubview:glView];
 		[self setUpOpenGL];
 		
-		positionX[0] = -15;
-		positionX[1] = 200 * screenRatio + 15;
-		positionY[0] = 60;
-		positionY[1] = 20;
+		positionX[0] = SSRandomIntBetween(0, 200);
+		positionX[1] = SSRandomIntBetween(0, 200);
+		positionY[0] = SSRandomIntBetween(0, 4) * 20;
+		positionY[1] = SSRandomIntBetween(5, 9) * 20;
 		flip[0] = -1;
 		flip[1] = 1;
 			
