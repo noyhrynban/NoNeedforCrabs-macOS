@@ -15,6 +15,8 @@
 		94527004228F2C1A00D66BF6 /* ScreenSaver.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94527003228F2C1A00D66BF6 /* ScreenSaver.framework */; };
 		94893405107EE90000095B03 /* MyOpenGLView.h in Headers */ = {isa = PBXBuildFile; fileRef = 94893403107EE90000095B03 /* MyOpenGLView.h */; };
 		94893406107EE90000095B03 /* MyOpenGLView.m in Sources */ = {isa = PBXBuildFile; fileRef = 94893404107EE90000095B03 /* MyOpenGLView.m */; };
+		94CD129422AEC04900F81BEA /* thumbnail.png in Resources */ = {isa = PBXBuildFile; fileRef = 94CD129222AEC04900F81BEA /* thumbnail.png */; };
+		94CD129522AEC04900F81BEA /* thumbnail@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 94CD129322AEC04900F81BEA /* thumbnail@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +29,8 @@
 		94527003228F2C1A00D66BF6 /* ScreenSaver.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ScreenSaver.framework; path = System/Library/Frameworks/ScreenSaver.framework; sourceTree = SDKROOT; };
 		94893403107EE90000095B03 /* MyOpenGLView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyOpenGLView.h; sourceTree = "<group>"; };
 		94893404107EE90000095B03 /* MyOpenGLView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyOpenGLView.m; sourceTree = "<group>"; };
+		94CD129222AEC04900F81BEA /* thumbnail.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = thumbnail.png; sourceTree = "<group>"; };
+		94CD129322AEC04900F81BEA /* thumbnail@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "thumbnail@2x.png"; sourceTree = "<group>"; };
 		F50079790118B23001CA0E54 /* NoNeedForCrabsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoNeedForCrabsView.h; sourceTree = "<group>"; };
 		F500797A0118B23001CA0E54 /* NoNeedForCrabsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoNeedForCrabsView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -61,6 +65,8 @@
 			children = (
 				8D255AD20486D3F9007BF209 /* Info.plist */,
 				089C167DFE841241C02AAC07 /* InfoPlist.strings */,
+				94CD129222AEC04900F81BEA /* thumbnail.png */,
+				94CD129322AEC04900F81BEA /* thumbnail@2x.png */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -168,7 +174,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				94CD129422AEC04900F81BEA /* thumbnail.png in Resources */,
 				8D255ACA0486D3F9007BF209 /* InfoPlist.strings in Resources */,
+				94CD129522AEC04900F81BEA /* thumbnail@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
