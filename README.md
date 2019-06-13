@@ -1,4 +1,4 @@
-# No Need For Crabs - macOS
+# No Need for Crabs - macOS
 A simple crab screen saver for macOS.
 
 [Download Latest](https://github.com/noyhrynban/no-need-for-crabs-macos/releases/latest/download/No.Need.For.Crabs.zip)
