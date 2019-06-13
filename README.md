@@ -15,3 +15,7 @@ It is written in some very old (by today's standards) OpenGL. Someday, Apple wil
 ## Why The Name
 
 The episodes of *Tenchi Universe* are all titled "No Need for ..." Since this screen saver is nothing but a couple crabs, **No Need For Crabs** seemed like a good name.
+
+## Port to webGL
+
+I did a [port to webGL](https://github.com/noyhrynban/NoNeedforCrabs-webGL) so anyone can [enjoy these cute little crabs](https://ryanharper.net/NoNeedforCrabs-webGL/).
