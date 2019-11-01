@@ -17,16 +17,16 @@
     if (self) {
 		NSOpenGLPixelFormatAttribute attributes[] = {
 			NSOpenGLPFAAccelerated,
-			NSOpenGLPFADepthSize, 16,
+			NSOpenGLPFADepthSize, 32,
 			NSOpenGLPFAMinimumPolicy,
 			NSOpenGLPFAClosestPolicy,
 			0 };
 		
 		NSOpenGLPixelFormat *format;
-        format = [[[NSOpenGLPixelFormat alloc] 
+        format = [[[NSOpenGLPixelFormat alloc]
 				  initWithAttributes:attributes]
 				  autorelease];
-		glView = [[MyOpenGLView alloc] initWithFrame:NSZeroRect pixelFormat:format];
+		glView = [[MyOpenGLView alloc] initWithFrame:frame pixelFormat:format];
 		if (!glView) {
 			NSLog(@"Could not initialize OpenGL View");
 			[self autorelease];
@@ -44,6 +44,7 @@
 		flip[1] = 1;
 			
 		[self setAnimationTimeInterval:1/24.0];
+        [self setFrameSize:frame.size];
     }
     return self;
 }
@@ -85,6 +86,7 @@
 
 - (void)animateOneFrame
 {
+    [super animateOneFrame];
 	//Adjust our state
 	positionX[0] += 1;
 	positionX[1] -= 1;
@@ -112,8 +114,8 @@
 	}
 	
 	//Redraw
-	[self setNeedsDisplay:YES];
-    return;
+    [self setNeedsDisplay:YES];
+//    return;
 }
 
 - (BOOL)hasConfigureSheet {
