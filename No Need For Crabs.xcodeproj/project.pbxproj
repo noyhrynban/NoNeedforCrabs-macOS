@@ -8,62 +8,44 @@
 
 /* Begin PBXBuildFile section */
 		8D255ACA0486D3F9007BF209 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C167DFE841241C02AAC07 /* InfoPlist.strings */; };
-		943819D0236CB6D3002BB9D2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943819CF236CB6D3002BB9D2 /* AppDelegate.swift */; };
-		943819D2236CB6D3002BB9D2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943819D1236CB6D3002BB9D2 /* ViewController.swift */; };
-		943819D4236CB6D4002BB9D2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 943819D3236CB6D4002BB9D2 /* Assets.xcassets */; };
-		943819D7236CB6D4002BB9D2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 943819D5236CB6D4002BB9D2 /* Main.storyboard */; };
-		943819DD236CB6E6002BB9D2 /* NoNeedForCrabsView.m in Sources */ = {isa = PBXBuildFile; fileRef = F500797A0118B23001CA0E54 /* NoNeedForCrabsView.m */; };
-		943819DE236CB6E8002BB9D2 /* NoNeedForCrabsView.m in Sources */ = {isa = PBXBuildFile; fileRef = F500797A0118B23001CA0E54 /* NoNeedForCrabsView.m */; };
-		943819DF236CB6F0002BB9D2 /* MyOpenGLView.m in Sources */ = {isa = PBXBuildFile; fileRef = 94893404107EE90000095B03 /* MyOpenGLView.m */; };
-		943819E0236CB6F0002BB9D2 /* MyOpenGLView.m in Sources */ = {isa = PBXBuildFile; fileRef = 94893404107EE90000095B03 /* MyOpenGLView.m */; };
-		943819E1236CB6F3002BB9D2 /* NoNeedForCrabsView.h in Headers */ = {isa = PBXBuildFile; fileRef = F50079790118B23001CA0E54 /* NoNeedForCrabsView.h */; };
-		943819E2236CB6F6002BB9D2 /* MyOpenGLView.h in Headers */ = {isa = PBXBuildFile; fileRef = 94893403107EE90000095B03 /* MyOpenGLView.h */; };
-		943819E4236CC29A002BB9D2 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94526FFF228F2C0500D66BF6 /* OpenGL.framework */; };
-		943819E5236CC2A8002BB9D2 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94526FFD228F2BFF00D66BF6 /* Cocoa.framework */; };
-		94526FFE228F2BFF00D66BF6 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94526FFD228F2BFF00D66BF6 /* Cocoa.framework */; };
-		94527000228F2C0500D66BF6 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94526FFF228F2C0500D66BF6 /* OpenGL.framework */; };
-		94527004228F2C1A00D66BF6 /* ScreenSaver.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94527003228F2C1A00D66BF6 /* ScreenSaver.framework */; };
-		94B30947236B404900B647A9 /* CrabsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94B30946236B404900B647A9 /* CrabsView.swift */; };
 		94B3095E236B4DBB00B647A9 /* crab.obj in Resources */ = {isa = PBXBuildFile; fileRef = 94B3095D236B4DBB00B647A9 /* crab.obj */; };
-		94B30961236B64A900B647A9 /* Renderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94B30960236B64A900B647A9 /* Renderer.swift */; };
-		94B30965236B8E9B00B647A9 /* Shaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = 94B30964236B8E9B00B647A9 /* Shaders.metal */; };
-		94B30969236BA31E00B647A9 /* Metal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94B30967236BA31E00B647A9 /* Metal.framework */; };
-		94B3096A236BA31E00B647A9 /* MetalKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94B30968236BA31E00B647A9 /* MetalKit.framework */; };
 		94CD129422AEC04900F81BEA /* thumbnail.png in Resources */ = {isa = PBXBuildFile; fileRef = 94CD129222AEC04900F81BEA /* thumbnail.png */; };
 		94CD129522AEC04900F81BEA /* thumbnail@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 94CD129322AEC04900F81BEA /* thumbnail@2x.png */; };
-		94EFA06A236CC83A00D923B6 /* Shaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = 94B30964236B8E9B00B647A9 /* Shaders.metal */; };
-		94EFA06B236CC83D00D923B6 /* Renderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94B30960236B64A900B647A9 /* Renderer.swift */; };
-		94EFA06C236CC84000D923B6 /* CrabsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94B30946236B404900B647A9 /* CrabsView.swift */; };
+		94FD590D237136BB00635B0C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94FD590C237136BB00635B0C /* AppDelegate.swift */; };
+		94FD590F237136BB00635B0C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94FD590E237136BB00635B0C /* ViewController.swift */; };
+		94FD5911237136BB00635B0C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 94FD5910237136BB00635B0C /* Assets.xcassets */; };
+		94FD5914237136BB00635B0C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 94FD5912237136BB00635B0C /* Main.storyboard */; };
+		94FD591E2371373B00635B0C /* crab.obj in Resources */ = {isa = PBXBuildFile; fileRef = 94B3095D236B4DBB00B647A9 /* crab.obj */; };
+		94FD591F2372181B00635B0C /* CrabsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94B30946236B404900B647A9 /* CrabsView.swift */; };
+		94FD59202372183500635B0C /* Shaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = 94B30964236B8E9B00B647A9 /* Shaders.metal */; };
+		94FD59212372183900635B0C /* Renderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94B30960236B64A900B647A9 /* Renderer.swift */; };
+		94FD59222372183C00635B0C /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94FDFB872371186200E5BB6A /* Util.swift */; };
+		94FD592523721A4300635B0C /* Metal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94FD592423721A4300635B0C /* Metal.framework */; };
+		94FD592623721A4E00635B0C /* Metal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94FD592423721A4300635B0C /* Metal.framework */; };
+		94FD592823721A5500635B0C /* MetalKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94FD592723721A5500635B0C /* MetalKit.framework */; };
+		94FD592923721BEE00635B0C /* MetalKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94FD592723721A5500635B0C /* MetalKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		8D255AD20486D3F9007BF209 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		8D255AD30486D3F9007BF209 /* No Need For Crabs.saver */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "No Need For Crabs.saver"; sourceTree = BUILT_PRODUCTS_DIR; };
-		943819CD236CB6D3002BB9D2 /* Test App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Test App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		943819CF236CB6D3002BB9D2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		943819D1236CB6D3002BB9D2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		943819D3236CB6D4002BB9D2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		943819D6236CB6D4002BB9D2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		943819D8236CB6D4002BB9D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		943819D9236CB6D4002BB9D2 /* Test_App.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Test_App.entitlements; sourceTree = "<group>"; };
-		943819E3236CB7D3002BB9D2 /* NoNeedForCrabs-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NoNeedForCrabs-Bridging-Header.h"; sourceTree = "<group>"; };
 		94526FF6228F263E00D66BF6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		94526FFD228F2BFF00D66BF6 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
-		94526FFF228F2C0500D66BF6 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
-		94527001228F2C0C00D66BF6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		94527003228F2C1A00D66BF6 /* ScreenSaver.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ScreenSaver.framework; path = System/Library/Frameworks/ScreenSaver.framework; sourceTree = SDKROOT; };
-		94893403107EE90000095B03 /* MyOpenGLView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyOpenGLView.h; sourceTree = "<group>"; };
-		94893404107EE90000095B03 /* MyOpenGLView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyOpenGLView.m; sourceTree = "<group>"; };
 		94B30946236B404900B647A9 /* CrabsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrabsView.swift; sourceTree = "<group>"; };
 		94B3095D236B4DBB00B647A9 /* crab.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = crab.obj; sourceTree = "<group>"; };
 		94B30960236B64A900B647A9 /* Renderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Renderer.swift; sourceTree = "<group>"; };
 		94B30964236B8E9B00B647A9 /* Shaders.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = Shaders.metal; sourceTree = "<group>"; };
-		94B30967236BA31E00B647A9 /* Metal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Metal.framework; path = System/Library/Frameworks/Metal.framework; sourceTree = SDKROOT; };
-		94B30968236BA31E00B647A9 /* MetalKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MetalKit.framework; path = System/Library/Frameworks/MetalKit.framework; sourceTree = SDKROOT; };
 		94CD129222AEC04900F81BEA /* thumbnail.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = thumbnail.png; sourceTree = "<group>"; };
 		94CD129322AEC04900F81BEA /* thumbnail@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "thumbnail@2x.png"; sourceTree = "<group>"; };
-		F50079790118B23001CA0E54 /* NoNeedForCrabsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoNeedForCrabsView.h; sourceTree = "<group>"; };
-		F500797A0118B23001CA0E54 /* NoNeedForCrabsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoNeedForCrabsView.m; sourceTree = "<group>"; };
+		94FD590A237136BA00635B0C /* Test App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Test App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		94FD590C237136BB00635B0C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		94FD590E237136BB00635B0C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		94FD5910237136BB00635B0C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		94FD5913237136BB00635B0C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		94FD5915237136BB00635B0C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		94FD5916237136BB00635B0C /* Test_App.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Test_App.entitlements; sourceTree = "<group>"; };
+		94FD592423721A4300635B0C /* Metal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Metal.framework; path = System/Library/Frameworks/Metal.framework; sourceTree = SDKROOT; };
+		94FD592723721A5500635B0C /* MetalKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MetalKit.framework; path = System/Library/Frameworks/MetalKit.framework; sourceTree = SDKROOT; };
+		94FDFB872371186200E5BB6A /* Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,20 +53,17 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				94527004228F2C1A00D66BF6 /* ScreenSaver.framework in Frameworks */,
-				94527000228F2C0500D66BF6 /* OpenGL.framework in Frameworks */,
-				94B30969236BA31E00B647A9 /* Metal.framework in Frameworks */,
-				94B3096A236BA31E00B647A9 /* MetalKit.framework in Frameworks */,
-				94526FFE228F2BFF00D66BF6 /* Cocoa.framework in Frameworks */,
+				94FD592623721A4E00635B0C /* Metal.framework in Frameworks */,
+				94FD592823721A5500635B0C /* MetalKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		943819CA236CB6D3002BB9D2 /* Frameworks */ = {
+		94FD5907237136BA00635B0C /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				943819E5236CC2A8002BB9D2 /* Cocoa.framework in Frameworks */,
-				943819E4236CC29A002BB9D2 /* OpenGL.framework in Frameworks */,
+				94FD592523721A4300635B0C /* Metal.framework in Frameworks */,
+				94FD592923721BEE00635B0C /* MetalKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -96,9 +75,9 @@
 			children = (
 				08FB77AFFE84173DC02AAC07 /* Classes */,
 				089C167CFE841241C02AAC07 /* Resources */,
-				943819CE236CB6D3002BB9D2 /* Test App */,
+				94FD590B237136BB00635B0C /* Test App */,
 				19C28FB8FE9D52D311CA2CBB /* Products */,
-				94526FFC228F2BFF00D66BF6 /* Frameworks */,
+				94FD592323721A4300635B0C /* Frameworks */,
 			);
 			name = "Washu's Crabs";
 			sourceTree = "<group>";
@@ -118,13 +97,10 @@
 		08FB77AFFE84173DC02AAC07 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				94893403107EE90000095B03 /* MyOpenGLView.h */,
-				F50079790118B23001CA0E54 /* NoNeedForCrabsView.h */,
-				94893404107EE90000095B03 /* MyOpenGLView.m */,
-				F500797A0118B23001CA0E54 /* NoNeedForCrabsView.m */,
 				94B30946236B404900B647A9 /* CrabsView.swift */,
 				94B30964236B8E9B00B647A9 /* Shaders.metal */,
 				94B30960236B64A900B647A9 /* Renderer.swift */,
+				94FDFB872371186200E5BB6A /* Util.swift */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -133,34 +109,29 @@
 			isa = PBXGroup;
 			children = (
 				8D255AD30486D3F9007BF209 /* No Need For Crabs.saver */,
-				943819CD236CB6D3002BB9D2 /* Test App.app */,
+				94FD590A237136BA00635B0C /* Test App.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		943819CE236CB6D3002BB9D2 /* Test App */ = {
+		94FD590B237136BB00635B0C /* Test App */ = {
 			isa = PBXGroup;
 			children = (
-				943819CF236CB6D3002BB9D2 /* AppDelegate.swift */,
-				943819D1236CB6D3002BB9D2 /* ViewController.swift */,
-				943819E3236CB7D3002BB9D2 /* NoNeedForCrabs-Bridging-Header.h */,
-				943819D3236CB6D4002BB9D2 /* Assets.xcassets */,
-				943819D5236CB6D4002BB9D2 /* Main.storyboard */,
-				943819D8236CB6D4002BB9D2 /* Info.plist */,
-				943819D9236CB6D4002BB9D2 /* Test_App.entitlements */,
+				94FD590C237136BB00635B0C /* AppDelegate.swift */,
+				94FD590E237136BB00635B0C /* ViewController.swift */,
+				94FD5910237136BB00635B0C /* Assets.xcassets */,
+				94FD5912237136BB00635B0C /* Main.storyboard */,
+				94FD5915237136BB00635B0C /* Info.plist */,
+				94FD5916237136BB00635B0C /* Test_App.entitlements */,
 			);
 			path = "Test App";
 			sourceTree = "<group>";
 		};
-		94526FFC228F2BFF00D66BF6 /* Frameworks */ = {
+		94FD592323721A4300635B0C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				94B30967236BA31E00B647A9 /* Metal.framework */,
-				94B30968236BA31E00B647A9 /* MetalKit.framework */,
-				94527003228F2C1A00D66BF6 /* ScreenSaver.framework */,
-				94527001228F2C0C00D66BF6 /* Foundation.framework */,
-				94526FFF228F2C0500D66BF6 /* OpenGL.framework */,
-				94526FFD228F2BFF00D66BF6 /* Cocoa.framework */,
+				94FD592723721A5500635B0C /* MetalKit.framework */,
+				94FD592423721A4300635B0C /* Metal.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -172,8 +143,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				943819E2236CB6F6002BB9D2 /* MyOpenGLView.h in Headers */,
-				943819E1236CB6F3002BB9D2 /* NoNeedForCrabsView.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -200,13 +169,13 @@
 			productReference = 8D255AD30486D3F9007BF209 /* No Need For Crabs.saver */;
 			productType = "com.apple.product-type.bundle";
 		};
-		943819CC236CB6D3002BB9D2 /* Test App */ = {
+		94FD5909237136BA00635B0C /* Test App */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 943819DA236CB6D4002BB9D2 /* Build configuration list for PBXNativeTarget "Test App" */;
+			buildConfigurationList = 94FD5917237136BB00635B0C /* Build configuration list for PBXNativeTarget "Test App" */;
 			buildPhases = (
-				943819C9236CB6D3002BB9D2 /* Sources */,
-				943819CA236CB6D3002BB9D2 /* Frameworks */,
-				943819CB236CB6D3002BB9D2 /* Resources */,
+				94FD5906237136BA00635B0C /* Sources */,
+				94FD5907237136BA00635B0C /* Frameworks */,
+				94FD5908237136BA00635B0C /* Resources */,
 			);
 			buildRules = (
 			);
@@ -214,7 +183,7 @@
 			);
 			name = "Test App";
 			productName = "Test App";
-			productReference = 943819CD236CB6D3002BB9D2 /* Test App.app */;
+			productReference = 94FD590A237136BA00635B0C /* Test App.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -224,8 +193,8 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = YES;
-				LastSwiftUpdateCheck = 1110;
-				LastUpgradeCheck = 1110;
+				LastSwiftUpdateCheck = 1120;
+				LastUpgradeCheck = 1120;
 				ORGANIZATIONNAME = "Ryan Harper";
 				TargetAttributes = {
 					8D255AC50486D3F9007BF209 = {
@@ -233,8 +202,8 @@
 						LastSwiftMigration = 1110;
 						ProvisioningStyle = Automatic;
 					};
-					943819CC236CB6D3002BB9D2 = {
-						CreatedOnToolsVersion = 11.1;
+					94FD5909237136BA00635B0C = {
+						CreatedOnToolsVersion = 11.2;
 						DevelopmentTeam = Z8LUQZA4RH;
 						ProvisioningStyle = Automatic;
 					};
@@ -253,7 +222,7 @@
 			projectRoot = "";
 			targets = (
 				8D255AC50486D3F9007BF209 /* No Need For Crabs */,
-				943819CC236CB6D3002BB9D2 /* Test App */,
+				94FD5909237136BA00635B0C /* Test App */,
 			);
 		};
 /* End PBXProject section */
@@ -270,12 +239,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		943819CB236CB6D3002BB9D2 /* Resources */ = {
+		94FD5908237136BA00635B0C /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				943819D4236CB6D4002BB9D2 /* Assets.xcassets in Resources */,
-				943819D7236CB6D4002BB9D2 /* Main.storyboard in Resources */,
+				94FD591E2371373B00635B0C /* crab.obj in Resources */,
+				94FD5911237136BB00635B0C /* Assets.xcassets in Resources */,
+				94FD5914237136BB00635B0C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -296,25 +266,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				94B30961236B64A900B647A9 /* Renderer.swift in Sources */,
-				943819DE236CB6E8002BB9D2 /* NoNeedForCrabsView.m in Sources */,
-				943819E0236CB6F0002BB9D2 /* MyOpenGLView.m in Sources */,
-				94B30947236B404900B647A9 /* CrabsView.swift in Sources */,
-				94B30965236B8E9B00B647A9 /* Shaders.metal in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		943819C9236CB6D3002BB9D2 /* Sources */ = {
+		94FD5906237136BA00635B0C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				943819DD236CB6E6002BB9D2 /* NoNeedForCrabsView.m in Sources */,
-				943819D2236CB6D3002BB9D2 /* ViewController.swift in Sources */,
-				943819D0236CB6D3002BB9D2 /* AppDelegate.swift in Sources */,
-				943819DF236CB6F0002BB9D2 /* MyOpenGLView.m in Sources */,
-				94EFA06C236CC84000D923B6 /* CrabsView.swift in Sources */,
-				94EFA06B236CC83D00D923B6 /* Renderer.swift in Sources */,
-				94EFA06A236CC83A00D923B6 /* Shaders.metal in Sources */,
+				94FD59202372183500635B0C /* Shaders.metal in Sources */,
+				94FD59222372183C00635B0C /* Util.swift in Sources */,
+				94FD591F2372181B00635B0C /* CrabsView.swift in Sources */,
+				94FD590F237136BB00635B0C /* ViewController.swift in Sources */,
+				94FD59212372183900635B0C /* Renderer.swift in Sources */,
+				94FD590D237136BB00635B0C /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -329,10 +293,10 @@
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
-		943819D5236CB6D4002BB9D2 /* Main.storyboard */ = {
+		94FD5912237136BB00635B0C /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				943819D6236CB6D4002BB9D2 /* Base */,
+				94FD5913237136BB00635B0C /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -340,7 +304,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		943819DB236CB6D4002BB9D2 /* Debug */ = {
+		94FD5918237136BB00635B0C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -350,7 +314,7 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = NO;
+				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
@@ -374,7 +338,6 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_ENTITLEMENTS = "Test App/Test_App.entitlements";
-				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
@@ -382,6 +345,8 @@
 				DEVELOPMENT_TEAM = Z8LUQZA4RH;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -397,19 +362,20 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_FILE = "Test App/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "net.ryanharper.Test-App";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
-				SWIFT_OBJC_BRIDGING_HEADER = "Test App/NoNeedForCrabs-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
-		943819DC236CB6D4002BB9D2 /* Release */ = {
+		94FD5919237136BB00635B0C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -419,7 +385,7 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = NO;
+				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
@@ -443,7 +409,6 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_ENTITLEMENTS = "Test App/Test_App.entitlements";
-				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
@@ -452,6 +417,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
@@ -461,12 +427,12 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_FILE = "Test App/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "net.ryanharper.Test-App";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
-				SWIFT_OBJC_BRIDGING_HEADER = "Test App/NoNeedForCrabs-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 5.0;
 			};
@@ -475,7 +441,6 @@
 		EF7AD72E08BB986600CE4634 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -486,7 +451,7 @@
 				GCC_VERSION = "";
 				INFOPLIST_FILE = Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				MARKETING_VERSION = 1.2;
+				MARKETING_VERSION = 1.3;
 				PRODUCT_BUNDLE_IDENTIFIER = net.ryanharper.noneedforcrabs;
 				PRODUCT_NAME = "No Need For Crabs";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -498,7 +463,6 @@
 		EF7AD72F08BB986600CE4634 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -509,7 +473,7 @@
 				GCC_VERSION = "";
 				INFOPLIST_FILE = Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				MARKETING_VERSION = 1.2;
+				MARKETING_VERSION = 1.3;
 				PRODUCT_BUNDLE_IDENTIFIER = net.ryanharper.noneedforcrabs;
 				PRODUCT_NAME = "No Need For Crabs";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -521,29 +485,27 @@
 		EF7AD73208BB986600CE4634 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ENABLE_TESTABILITY = YES;
-				GCC_VERSION = "";
-				MACOSX_DEPLOYMENT_TARGET = 10.12;
-				ONLY_ACTIVE_ARCH = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				USE_HEADERMAP = NO;
 			};
 			name = Debug;
 		};
 		EF7AD73308BB986600CE4634 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				GCC_VERSION = "";
-				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				USE_HEADERMAP = NO;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		943819DA236CB6D4002BB9D2 /* Build configuration list for PBXNativeTarget "Test App" */ = {
+		94FD5917237136BB00635B0C /* Build configuration list for PBXNativeTarget "Test App" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				943819DB236CB6D4002BB9D2 /* Debug */,
-				943819DC236CB6D4002BB9D2 /* Release */,
+				94FD5918237136BB00635B0C /* Debug */,
+				94FD5919237136BB00635B0C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -23,6 +23,6 @@
 	<key>CFBundleVersion</key>
 	<string>1.0</string>
 	<key>NSPrincipalClass</key>
-	<string>NoNeedForCrabsView</string>
+	<string>No_Need_For_Crabs.CrabsView</string>
 </dict>
 </plist>

@@ -12,11 +12,11 @@ import MetalKit
 
 class CrabsView: ScreenSaverView {
     private let numberOfCrabs = 2
-    private var positionX: [Int]
-    private var positionY: [Int]
-    private var flip: [Int]
-    private let screenRatio: Float
-    private let viewWidth: Int
+    private var positionX: [Int]!
+    private var positionY: [Int]!
+    private var flip: [Int]!
+    private var screenRatio: Float!
+    private var viewWidth: Int!
     
     private var mtlDevice: MTLDevice!
     private var mtkView: MTKView!
@@ -24,6 +24,8 @@ class CrabsView: ScreenSaverView {
     
     // MARK: - Initialization
     override init?(frame: NSRect, isPreview: Bool) {
+        super.init(frame: frame, isPreview: isPreview)
+        
         positionX = [Int]()
         positionY = [Int]()
         flip = [-1, 1]
@@ -35,33 +37,66 @@ class CrabsView: ScreenSaverView {
         positionY.append(Int.random(in: 0...4) * 20)
         positionY.append(Int.random(in: 5...9) * 20)
         
-        super.init(frame: frame, isPreview: isPreview)
-        self.animationTimeInterval = 1/24.0
+        animationTimeInterval = 1/24.0
         
         mtlDevice = MTLCreateSystemDefaultDevice()!
-        mtkView = MTKView(frame: frame, device: mtlDevice)
-        mtkView.enableSetNeedsDisplay = true
-        mtkView.device = mtlDevice
-        mtkView.colorPixelFormat = .bgra8Unorm
-        mtkView.clearColor = MTLClearColorMake(0.0, 0.5, 1.0, 1.0)
-        renderer = Renderer(view: mtkView)
-        renderer.mtkView(mtkView, drawableSizeWillChange: mtkView.drawableSize)
-        mtkView.delegate = renderer
+        renderer = Renderer(device: mtlDevice)
     }
 
-//    @available(*, unavailable)
+    @available(*, unavailable)
     required init?(coder decoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
-    // MARK: - Lifecycle
-    override func draw(_ rect: NSRect) {
-        // Draw a single frame in this function
-        renderer.draw(in: mtkView)
+    
+    override func viewDidMoveToSuperview()
+    // deferred initialisations that require access to the window
+    {
+        super.viewDidMoveToSuperview()
+        if let window = superview?.window {
+            layer = makeMetalLayer(window: window, device: mtlDevice)
+//            displayLink = makeDisplayLink(window: window)
+        }
+    }
+    
+    private func makeMetalLayer(window: NSWindow, device: MTLDevice) -> CAMetalLayer
+    {
+        let metalLayer = CAMetalLayer()
+        metalLayer.device = device
+        metalLayer.pixelFormat = .bgra8Unorm
+        metalLayer.framebufferOnly = true
+        metalLayer.contentsScale = window.backingScaleFactor
+        metalLayer.isOpaque = true
+        return metalLayer
+    }
+    
+    override func resize(withOldSuperviewSize oldSuperviewSize: NSSize) {
+        super.resize(withOldSuperviewSize: oldSuperviewSize)
+        updateSizeAndTextures()
+    }
+    
+    private func updateSizeAndTextures()
+    {
+//        renderer.setOutputSize(bounds.size)
+//        for (index, color) in settings.glyphColors.enumerated() {
+//            let image = makeBitmapImageRepForGlyph(settings.glyph, color:color)
+//            renderer.setTexture(image: image, at: index)
+//        }
     }
 
+
+    // MARK: - Lifecycle
+//    override func draw(_ rect: NSRect) {
+//        // Draw a single frame in this function
+//
+////        renderer.draw(in: mtkView)
+//    }
+    
+//    override class func backingStoreType() -> NSWindow.BackingStoreType
+//    {
+//        return NSWindow.BackingStoreType.nonretained
+//    }
+
     override func animateOneFrame() {
-        super.animateOneFrame()
         
         positionX[0] += 1
         positionX[1] += 1
@@ -90,6 +125,12 @@ class CrabsView: ScreenSaverView {
                 }
             }
         }
+        let aLayer = self.layer
+        
+        let metalLayer = aLayer as! CAMetalLayer
+        
+        if let drawable = metalLayer.nextDrawable() {
+            self.renderer.renderFrame(in: drawable)
+        }
     }
-
 }
