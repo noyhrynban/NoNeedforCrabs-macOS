@@ -1,4 +1,3 @@
-
 #include <metal_stdlib>
 using namespace metal;
 
@@ -15,12 +14,14 @@ struct Uniforms {
     float4x4 projectionMatrix;
 };
 
-vertex float4 vertexShader(VertexIn vertexIn [[stage_in]],
-                           constant Uniforms &uniforms [[buffer(1)]])
+vertex VertexOut vertex_main(VertexIn vertexIn [[stage_in]],
+                             constant Uniforms &uniforms [[buffer(1)]])
 {
-    return uniforms.projectionMatrix * uniforms.modelViewMatrix * float4(vertexIn.position, 1);
+    VertexOut vertexOut;
+    vertexOut.position = uniforms.projectionMatrix * uniforms.modelViewMatrix * float4(vertexIn.position, 1);
+    return vertexOut;
 }
 
-fragment float4 fragmentShader() {
-    return float4(0.6, 0, 0, 1);
+fragment float4 fragment_main(VertexOut fragmentIn [[stage_in]]) {
+    return float4(1, 0, 0, 1);
 }

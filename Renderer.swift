@@ -1,125 +1,130 @@
-//
-//  Renderer.swift
-//  No Need For Crabs
-//
-//  Created by Ryan on 10/31/19.
-//  Copyright © 2019 Ryan Harper. All rights reserved.
-//
-
-import Cocoa
-import Metal
+import Foundation
 import MetalKit
-import ModelIO
 import simd
 
-class Renderer {
-    private var device: MTLDevice
-    private var commandQueue: MTLCommandQueue!
-    private var pipelineState: MTLRenderPipelineState!
-    
-//    var viewPortSize: CGSize
+struct Uniforms {
+    var modelViewMatrix: float4x4
+    var projectionMatrix: float4x4
+}
+
+class Renderer: NSObject {
+    let bundle: Bundle
+    let device: MTLDevice
+    let mtkView: MTKView
+    let commandQueue: MTLCommandQueue
+    var renderPipeline: MTLRenderPipelineState!
     var vertexDescriptor: MTLVertexDescriptor!
     var meshes: [MTKMesh] = []
     
-    init(device: MTLDevice) {
+    init(view: MTKView, device: MTLDevice) {
+        self.mtkView = view
         self.device = device
         self.commandQueue = device.makeCommandQueue()!
-        
+        self.bundle = Bundle(for: Self.self)
+
+        super.init()
         loadResources()
         buildPipeline()
     }
     
     func loadResources() {
-        let modelURL = Bundle.main.url(forResource: "crab", withExtension: "obj")!
-
+        let crabModelURL = bundle.url(forResource: "crab", withExtension: "obj")!
+        
         let vertexDescriptor = MDLVertexDescriptor()
         vertexDescriptor.attributes[0] = MDLVertexAttribute(name: MDLVertexAttributePosition, format: .float3, offset: 0, bufferIndex: 0)
         vertexDescriptor.attributes[1] = MDLVertexAttribute(name: MDLVertexAttributeNormal, format: .float3, offset: MemoryLayout<Float>.size * 3, bufferIndex: 0)
         vertexDescriptor.attributes[2] = MDLVertexAttribute(name: MDLVertexAttributeTextureCoordinate, format: .float2, offset: MemoryLayout<Float>.size * 6, bufferIndex: 0)
         vertexDescriptor.layouts[0] = MDLVertexBufferLayout(stride: MemoryLayout<Float>.size * 8)
-
+        
         self.vertexDescriptor = MTKMetalVertexDescriptorFromModelIO(vertexDescriptor)
-
+        
         let bufferAllocator = MTKMeshBufferAllocator(device: device)
-
-        let asset = MDLAsset(url: modelURL, vertexDescriptor: vertexDescriptor, bufferAllocator: bufferAllocator)
-
+        
+        let asset = MDLAsset(url: crabModelURL, vertexDescriptor: vertexDescriptor, bufferAllocator: bufferAllocator)
+        
         do {
             (_, meshes) = try MTKMesh.newMeshes(asset: asset, device: device)
         } catch {
             fatalError("Could not extract meshes from Model I/O asset")
         }
     }
-
+    
     func buildPipeline() {
-        guard let library = device.makeDefaultLibrary() else {
+        guard let library = try? device.makeDefaultLibrary(bundle: bundle) else {
             fatalError("Could not load default library from main bundle")
         }
-
-        let vertexFunction = library.makeFunction(name: "vertexShader")
-        let fragmentFunction = library.makeFunction(name: "fragmentShader")
-
+        
+        let vertexFunction = library.makeFunction(name: "vertex_main")
+        let fragmentFunction = library.makeFunction(name: "fragment_main")
+        
         let pipelineDescriptor = MTLRenderPipelineDescriptor()
         pipelineDescriptor.vertexFunction = vertexFunction
         pipelineDescriptor.fragmentFunction = fragmentFunction
-//        pipelineDescriptor.colorAttachments[0].pixelFormat = mtkView.colorPixelFormat
+        pipelineDescriptor.colorAttachments[0].pixelFormat = mtkView.colorPixelFormat
         pipelineDescriptor.vertexDescriptor = vertexDescriptor
-
+        
         do {
-            self.pipelineState = try device.makeRenderPipelineState(descriptor: pipelineDescriptor)
+            renderPipeline = try device.makeRenderPipelineState(descriptor: pipelineDescriptor)
         } catch {
             fatalError("Could not create render pipeline state object: \(error)")
         }
     }
     
-    func renderFrame(in drawable: CAMetalDrawable) {
-        let aspectRatio = Float(drawable.layer.bounds.width / drawable.layer.bounds.height)
-        
-        let commandBuffer = commandQueue.makeCommandBuffer()!
-        let renderPassDescriptor = MTLRenderPassDescriptor()
-        renderPassDescriptor.colorAttachments[0].texture = drawable.texture
-        renderPassDescriptor.colorAttachments[0].loadAction = .clear
-        renderPassDescriptor.colorAttachments[0].clearColor = .init(red: 0, green: 0, blue: 0, alpha: 1)
-        renderPassDescriptor.colorAttachments[0].storeAction = .dontCare
-        
-        let commandEncoder = commandBuffer.makeRenderCommandEncoder(descriptor: renderPassDescriptor)!
-        let identityMatrix = float4x4(
-            SIMD4<Float>(1,0,0,0),
-            SIMD4<Float>(0,1,0,0),
-            SIMD4<Float>(0,0,1,0),
-            SIMD4<Float>(0,0,0,1)
+    func ortho(left:Float, right:Float, bottom:Float, top:Float, near:Float, far:Float) -> float4x4 {
+        return float4x4(
+            SIMD4<Float>(2/(right-left), 0, 0, 0),
+            SIMD4<Float>(0, 2/(top-bottom), 0, 0),
+            SIMD4<Float>(0, 0, -2/(far-near), 0),
+            SIMD4<Float>(-((right+left)/(right-left)), -((top+bottom)/(top-bottom)), -((far+near)/(far-near)), 1)
         )
-//        time += 1 / Float(mtkView.preferredFramesPerSecond)
-//            let angle = -time
-//            let modelMatrix = float4x4(rotationAbout: SIMD3<Float>(0, 1, 0), by: angle) *  float4x4(scaleBy: 1)
-        let modelMatrix = identityMatrix * float4x4(scaleBy: 1)
-        let viewMatrix = float4x4(translationBy: SIMD3<Float>(0, 0, -7))
-        let modelViewMatrix = viewMatrix * modelMatrix
-//            let projectionMatrix = float4x4(perspectiveProjectionFov: Float.pi / 3, aspectRatio: aspectRatio, nearZ: 0.1, farZ: 100)
+    }
+    
+    func draw(crabs:[Crab]) {
+        let commandBuffer = commandQueue.makeCommandBuffer()!
         
-        let projectionMatrix = float4x4( left: 0, right: 200 * aspectRatio, bottom: 0, top: 200, near: -1, far: 10)
-        var uniforms = Uniforms(modelViewMatrix: modelViewMatrix, projectionMatrix: projectionMatrix)
-        commandEncoder.setVertexBytes(&uniforms, length: MemoryLayout<Uniforms>.size, index: 1)
-        commandEncoder.setRenderPipelineState(self.pipelineState)
-        commandEncoder.setCullMode(MTLCullMode.back)
-        
-        for mesh in meshes {
-            let vertexBuffer = mesh.vertexBuffers.first!
-            commandEncoder.setVertexBuffer(vertexBuffer.buffer, offset: vertexBuffer.offset, index: 0)
-            
-            for submesh in mesh.submeshes {
-                let indexBuffer = submesh.indexBuffer
-                commandEncoder.drawIndexedPrimitives(type: submesh.primitiveType,
-                                                     indexCount: submesh.indexCount,
-                                                     indexType: submesh.indexType,
-                                                     indexBuffer: indexBuffer.buffer,
-                                                     indexBufferOffset: indexBuffer.offset)
+        if let renderPassDescriptor = mtkView.currentRenderPassDescriptor, let drawable = mtkView.currentDrawable {
+            let commandEncoder = commandBuffer.makeRenderCommandEncoder(descriptor: renderPassDescriptor)!
+
+            for crab in crabs {
+                let identity = float4x4(
+                    SIMD4<Float>(1,0,0,0),
+                    SIMD4<Float>(0,1,0,0),
+                    SIMD4<Float>(0,0,1,0),
+                    SIMD4<Float>(0,0,0,1)
+                )
+                
+                let aspectRatio = Float(mtkView.drawableSize.width / mtkView.drawableSize.height)
+
+                var mvMatrix = identity
+                mvMatrix *= float4x4(translationBy: SIMD3<Float>(Float(crab.xPosition), Float(crab.yPosition), -7))
+                mvMatrix *= float4x4(rotationAbout: SIMD3<Float>(0, 1, 0), by: Float.pi * Float(crab.flip ? 0 : 1))
+                mvMatrix *= float4x4(translationBy: SIMD3<Float>(-15.5, 0, 0))
+                
+                let projectionMatrix = ortho(left: 0, right: 200 * aspectRatio, bottom: 0, top: 200, near: -1, far: 10)
+                var uniforms = Uniforms(modelViewMatrix: mvMatrix, projectionMatrix: projectionMatrix)
+                
+                commandEncoder.setVertexBytes(&uniforms, length: MemoryLayout<Uniforms>.size, index: 1)
+                
+                commandEncoder.setRenderPipelineState(renderPipeline)
+                commandEncoder.setCullMode(MTLCullMode.back)
+                
+                for mesh in meshes {
+                    let vertexBuffer = mesh.vertexBuffers.first!
+                    commandEncoder.setVertexBuffer(vertexBuffer.buffer, offset: vertexBuffer.offset, index: 0)
+                    
+                    for submesh in mesh.submeshes {
+                        let indexBuffer = submesh.indexBuffer
+                        commandEncoder.drawIndexedPrimitives(type: submesh.primitiveType,
+                                                             indexCount: submesh.indexCount,
+                                                             indexType: submesh.indexType,
+                                                             indexBuffer: indexBuffer.buffer,
+                                                             indexBufferOffset: indexBuffer.offset)
+                    }
+                }
             }
+            commandEncoder.endEncoding()
+            commandBuffer.present(drawable)
+            commandBuffer.commit()
         }
-        
-        commandEncoder.endEncoding()
-        commandBuffer.present(drawable)
-        commandBuffer.commit()
-//        commandBuffer.waitUntilCompleted()
     }
 }
