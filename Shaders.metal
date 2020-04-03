@@ -23,5 +23,5 @@ vertex VertexOut vertex_main(VertexIn vertexIn [[stage_in]],
 }
 
 fragment float4 fragment_main(VertexOut fragmentIn [[stage_in]]) {
-    return float4(1, 0, 0, 1);
+    return float4(0.6, 0, 0, 1);
 }
