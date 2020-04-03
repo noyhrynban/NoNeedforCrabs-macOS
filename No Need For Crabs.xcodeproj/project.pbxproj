@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		8D255ACA0486D3F9007BF209 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C167DFE841241C02AAC07 /* InfoPlist.strings */; };
 		949DBA052436B5CB00DB0BDD /* Crab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 949DBA042436B5CB00DB0BDD /* Crab.swift */; };
-		949DBA072436B63200DB0BDD /* CrabsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94B30946236B404900B647A9 /* CrabsView.swift */; };
+		949DBA072436B63200DB0BDD /* CrabScreenSaverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94B30946236B404900B647A9 /* CrabScreenSaverView.swift */; };
 		949DBA082436B63900DB0BDD /* Shaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = 94B30964236B8E9B00B647A9 /* Shaders.metal */; };
 		949DBA092436B6C900DB0BDD /* Renderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94B30960236B64A900B647A9 /* Renderer.swift */; };
 		949DBA0A2436B6CC00DB0BDD /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94FDFB872371186200E5BB6A /* Util.swift */; };
@@ -25,7 +25,7 @@
 		8D255AD30486D3F9007BF209 /* No Need For Crabs.saver */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "No Need For Crabs.saver"; sourceTree = BUILT_PRODUCTS_DIR; };
 		94526FF6228F263E00D66BF6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		949DBA042436B5CB00DB0BDD /* Crab.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Crab.swift; sourceTree = "<group>"; };
-		94B30946236B404900B647A9 /* CrabsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrabsView.swift; sourceTree = "<group>"; };
+		94B30946236B404900B647A9 /* CrabScreenSaverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrabScreenSaverView.swift; sourceTree = "<group>"; };
 		94B3095D236B4DBB00B647A9 /* crab.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = crab.obj; sourceTree = "<group>"; };
 		94B30960236B64A900B647A9 /* Renderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Renderer.swift; sourceTree = "<group>"; };
 		94B30964236B8E9B00B647A9 /* Shaders.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = Shaders.metal; sourceTree = "<group>"; };
@@ -75,7 +75,7 @@
 		08FB77AFFE84173DC02AAC07 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				94B30946236B404900B647A9 /* CrabsView.swift */,
+				94B30946236B404900B647A9 /* CrabScreenSaverView.swift */,
 				94B30964236B8E9B00B647A9 /* Shaders.metal */,
 				94B30960236B64A900B647A9 /* Renderer.swift */,
 				94FDFB872371186200E5BB6A /* Util.swift */,
@@ -200,7 +200,7 @@
 				949DBA092436B6C900DB0BDD /* Renderer.swift in Sources */,
 				949DBA082436B63900DB0BDD /* Shaders.metal in Sources */,
 				949DBA0A2436B6CC00DB0BDD /* Util.swift in Sources */,
-				949DBA072436B63200DB0BDD /* CrabsView.swift in Sources */,
+				949DBA072436B63200DB0BDD /* CrabScreenSaverView.swift in Sources */,
 				949DBA052436B5CB00DB0BDD /* Crab.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

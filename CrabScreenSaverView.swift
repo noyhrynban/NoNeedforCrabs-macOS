@@ -1,6 +1,5 @@
 import ScreenSaver
 import MetalKit
-import os.log
 
 
 class CrabScreenSaverView: ScreenSaverView {
