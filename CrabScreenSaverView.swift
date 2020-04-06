@@ -83,4 +83,8 @@ class CrabScreenSaverView: ScreenSaverView {
         moveCrabs()
         setNeedsDisplay(_: metalKitView.frame)
     }
+    
+    class override func performGammaFade() -> Bool {
+        return false
+    }
 }
