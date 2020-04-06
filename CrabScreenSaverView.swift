@@ -37,6 +37,7 @@ class CrabScreenSaverView: ScreenSaverView {
         
         // Set frame rate to 1 ÷ <desired frames per second>
         animationTimeInterval = 1.0 / 24.0
+        startAnimation()
     }
 
     @available(*, unavailable)
