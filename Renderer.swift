@@ -93,6 +93,7 @@ class Renderer: NSObject {
                     SIMD4<Float>(0,0,0,1)
                 )
                 
+                // REVIEW: This probably doesn't need to be recalculated every frame?
                 let aspectRatio = Float(mtkView.drawableSize.width / mtkView.drawableSize.height)
 
                 var mvMatrix = identity
@@ -103,11 +104,16 @@ class Renderer: NSObject {
                 let projectionMatrix = ortho(left: 0, right: 200 * aspectRatio, bottom: 0, top: 200, near: -1, far: 10)
                 var uniforms = Uniforms(modelViewMatrix: mvMatrix, projectionMatrix: projectionMatrix)
                 
+                // REVIEW: I would look for a way that you can change the uniform values without having to re-create
+                // the whole command buffer every time.
                 commandEncoder.setVertexBytes(&uniforms, length: MemoryLayout<Uniforms>.size, index: 1)
                 
                 commandEncoder.setRenderPipelineState(renderPipeline)
                 commandEncoder.setCullMode(MTLCullMode.back)
                 
+                // REVIEW: This, in particular, seems like it would be pretty expensive, at least algorithmically.
+                // The crabs are probably not ACTUALLY that complex, but a double-nested 'for' loop inside every frame
+                // for drawing something shouldn't be necessary... like I would be surprised if this is actually needed.
                 for mesh in meshes {
                     let vertexBuffer = mesh.vertexBuffers.first!
                     commandEncoder.setVertexBuffer(vertexBuffer.buffer, offset: vertexBuffer.offset, index: 0)
