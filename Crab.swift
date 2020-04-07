@@ -1,3 +1,6 @@
+// REVIEW: May want to put the model matrix generation in here, since each crab has its own
+// and calling "getTransformMatrix" or something is cleaner in your render loop than generating
+// it. (Also, if you ever had objects that haven't moved, you could cache the matrix.)
 class Crab {
     var xPosition: Int
     var yPosition: Int
