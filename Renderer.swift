@@ -81,30 +81,27 @@ class Renderer: NSObject {
     
     func draw(crabs:[Crab]) {
         let commandBuffer = commandQueue.makeCommandBuffer()!
+        let aspectRatio = Float(mtkView.drawableSize.width / mtkView.drawableSize.height)
+        let projectionMatrix = ortho(left: 0, right: 200 * aspectRatio, bottom: 0, top: 200, near: -1, far: 10)
+        let identity = float4x4(
+            SIMD4<Float>(1,0,0,0),
+            SIMD4<Float>(0,1,0,0),
+            SIMD4<Float>(0,0,1,0),
+            SIMD4<Float>(0,0,0,1)
+        )
         
         if let renderPassDescriptor = mtkView.currentRenderPassDescriptor, let drawable = mtkView.currentDrawable {
             let commandEncoder = commandBuffer.makeRenderCommandEncoder(descriptor: renderPassDescriptor)!
 
             for crab in crabs {
-                let identity = float4x4(
-                    SIMD4<Float>(1,0,0,0),
-                    SIMD4<Float>(0,1,0,0),
-                    SIMD4<Float>(0,0,1,0),
-                    SIMD4<Float>(0,0,0,1)
-                )
-                
-                let aspectRatio = Float(mtkView.drawableSize.width / mtkView.drawableSize.height)
-
                 var mvMatrix = identity
                 mvMatrix *= float4x4(translationBy: SIMD3<Float>(Float(crab.xPosition), Float(crab.yPosition), -7))
                 mvMatrix *= float4x4(rotationAbout: SIMD3<Float>(0, 1, 0), by: Float.pi * Float(crab.flip ? 0 : 1))
                 mvMatrix *= float4x4(translationBy: SIMD3<Float>(-15.5, 0, 0))
                 
-                let projectionMatrix = ortho(left: 0, right: 200 * aspectRatio, bottom: 0, top: 200, near: -1, far: 10)
                 var uniforms = Uniforms(modelViewMatrix: mvMatrix, projectionMatrix: projectionMatrix)
                 
                 commandEncoder.setVertexBytes(&uniforms, length: MemoryLayout<Uniforms>.size, index: 1)
-                
                 commandEncoder.setRenderPipelineState(renderPipeline)
                 commandEncoder.setCullMode(MTLCullMode.back)
                 
