@@ -101,11 +101,18 @@ class Renderer: NSObject {
                 mvMatrix *= float4x4(rotationAbout: SIMD3<Float>(0, 1, 0), by: Float.pi * Float(crab.flip ? 0 : 1))
                 mvMatrix *= float4x4(translationBy: SIMD3<Float>(-15.5, 0, 0))
                 
+                // REVIEW: You DEFINITELY shouldn't have to call ortho() more than once in this unless the screen
+                // ratio were to change; and if you wanted to support that, I would refresh the projectionMatrix
+                // inside a callback for screen size change, not every frame here.
                 let projectionMatrix = ortho(left: 0, right: 200 * aspectRatio, bottom: 0, top: 200, near: -1, far: 10)
                 var uniforms = Uniforms(modelViewMatrix: mvMatrix, projectionMatrix: projectionMatrix)
                 
                 // REVIEW: I would look for a way that you can change the uniform values without having to re-create
                 // the whole command buffer every time.
+                // ...Might be a paing, but I found this on Apple's docs:
+                // "Create a MTLBuffer object if your data exceeds 4 KB in length or persists for multiple uses."
+                // ...so I would do that and then update the MTLBuffer with your new uniform data. Or at least
+                // that sounds like where to start looking.
                 commandEncoder.setVertexBytes(&uniforms, length: MemoryLayout<Uniforms>.size, index: 1)
                 
                 commandEncoder.setRenderPipelineState(renderPipeline)
